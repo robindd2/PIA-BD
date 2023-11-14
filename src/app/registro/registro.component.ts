@@ -44,10 +44,7 @@ export class RegistroComponent  implements OnInit {
 
   ngOnInit() {}
 
-  usuario: any = {
-    nombreUsuario : "",
-    pass: "",
-  };
+  usuario: any;
 
   login() {
     var nombreUsuario = (<HTMLInputElement>document.getElementById("nombreUsuario")).value;

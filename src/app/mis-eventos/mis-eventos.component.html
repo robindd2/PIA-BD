@@ -15,16 +15,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-card >
+<ion-card *ngFor="let miEvento of misEventos">
   <ion-card-header>
-    <ion-card-title>EVENTO: </ion-card-title>
+    <ion-card-title>EVENTO: {{miEvento.nombreEvento}}</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
-    <ion-card-subtitle>Dependencia:</ion-card-subtitle>
-    <ion-card-subtitle>Tipo:</ion-card-subtitle>
-    <p>Descripción: </p>
-    <p>Cupo: </p>
+    <ion-card-subtitle>Tipo: {{miEvento.tipoEvento}}</ion-card-subtitle>
+    <p>Descripción: {{miEvento.descripcion}}</p>
+    <p>Cupo: {{miEvento.cupo}}</p>
+    <p>Lugar:  {{miEvento.lugar}}</p>
+    <p>Fecha de inicio: {{miEvento.fechaInicio}}</p>
+    <p>Fecha de fin: {{miEvento.fechaFin}}</p>
   </ion-card-content>
   <ion-button fill="clear" routerLink="/detalle_evento"> Más informacion</ion-button>
   <ion-button fill="clear" routerLink="/editar_evento"> Editar</ion-button>

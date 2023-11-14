@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
+import { Injectable } from '@angular/core';
 
 
 @Component({
@@ -13,12 +15,11 @@ export class LoginComponent  implements OnInit {
   readonly APIUrl =  "http://localhost:5293/api/PIABDD/"
 
 
-  constructor(private Http:HttpClient, private router: Router) {}
+  constructor(private Http:HttpClient, private router: Router, private loginService: LoginService) {}
 
   ngOnInit() {}
+
   usuario: any = {
-    nombreUsuario : "",
-    pass: "",
   };
 
   login() {
@@ -28,6 +29,7 @@ export class LoginComponent  implements OnInit {
     this.Http.get<any[]>(url).subscribe(data => {
       console.log(data);
       this.usuario = data[0];
+      this.loginService.guardarUsuario(this.usuario)
       console.log(this.usuario.pass);
       if(this.usuario.nombreUsuario == nombreUsuario || this.usuario.pass == pass) { 
         this.router.navigate(['/home']);
