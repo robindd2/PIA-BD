@@ -2,7 +2,7 @@
   <ion-header>
     <ion-toolbar> 
       <ion-buttons slot="start">
-        <ion-back-button default-href="/login"></ion-back-button>
+        <ion-back-button default-href="/MIS-EVENTOS"></ion-back-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
@@ -18,29 +18,24 @@
       </ion-item>
 
       <ion-item >
-        <ion-label>Tipo:</ion-label>
           <ion-select  id="tipoEvento" required label="Seleccionar" label-placement="floating" fill="outline" >
           <ion-select-option  *ngFor="let tipoEvento of tipoEventos"[value]="tipoEvento">{{tipoEvento}}</ion-select-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
-    
         <ion-input label="FECHA INICIO :" value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline" ></ion-input>
       </ion-item>
 
       <ion-item>
-       
         <ion-input  label="FECHA FIN :" value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
       </ion-item>
 
       <ion-item>
-   
         <ion-input label="LUGAR :"  value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
       </ion-item>
 
       <ion-item>
-      
         <ion-input label="CUPO MAXIMO :" value="s" placeholder="Cupo Maximo" label-placement="floating" fill="outline"  ></ion-input>
       </ion-item>
         
@@ -53,6 +48,7 @@
         <ion-textarea  label="DESCRIPCION :" value="s" placeholder="Descripción del Evento" label-placement="floating" fill="outline" ></ion-textarea>
       </ion-item>
       <br>
+
     </ion-card-content>
   </ion-card>
 

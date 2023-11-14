@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crear-evento.component.scss'],
 })
 export class CrearEventoComponent  implements OnInit {
-
+  tipoEventos = [ 'Alumno',
+'Maestro',
+'Director',
+'SubDirector',
+'Secretaria',
+'Jefes de Academia',
+'Administrativo'];
   constructor() { }
 
   ngOnInit() {}
