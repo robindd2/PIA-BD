@@ -6,13 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editar-evento.component.scss'],
 })
 export class EditarEventoComponent  implements OnInit {
-  tipoEventos = [ 'Alumno',
-'Maestro',
-'Director',
-'SubDirector',
-'Secretaria',
-'Jefes de Academia',
-'Administrativo'];
+  tipoEventos = [ 'Deportivo',
+  'Cultural',
+  'Academico',
+  'Responsabilidad Social'];
   constructor() { }
 
   ngOnInit() {}
