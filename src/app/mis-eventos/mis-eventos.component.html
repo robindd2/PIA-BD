@@ -1,0 +1,28 @@
+<ion-content>
+<ion-header>
+  <ion-toolbar>
+    <ion-segment  value="MIS-EVENTOS">
+      <ion-segment-button (ionChange)="segmentChanged($event)" value="EVENTOS" routerLink="/home">
+        <ion-label>EVENTOS</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="MIS-EVENTOS">
+        <ion-label>MIS EVENTOS</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card >
+  <ion-card-header>
+    <ion-card-title>EVENTO: </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-card-subtitle>Dependencia:</ion-card-subtitle>
+    <ion-card-subtitle>Tipo:</ion-card-subtitle>
+    <p>Descripción: </p>
+  </ion-card-content>
+  <p>Cupo: </p>
+  <ion-button fill="clear"> Editar</ion-button>
+</ion-card>
+</ion-content>

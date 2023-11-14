@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-segment  value="EVENTOS">
+      <ion-segment-button value="EVENTOS">
+        <ion-label>EVENTOS</ion-label>
+      </ion-segment-button>
+      <ion-segment-button (ionChange)="segmentChanged($event)" value="MIS-EVENTOS"  routerLink="/MIS-EVENTOS">
+        <ion-label>MIS EVENTOS</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>EVENTO: </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-subtitle>Dependencia:</ion-card-subtitle>
+      <ion-card-subtitle>Tipo:</ion-card-subtitle>
+      <p>Descripción: </p>
+    </ion-card-content>
+    <ion-button fill="clear"> Más Inofrmacion</ion-button>
+  </ion-card>
+

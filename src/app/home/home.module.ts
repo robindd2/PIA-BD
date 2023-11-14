@@ -11,6 +11,7 @@ import { EditarEventoComponent } from '../editar-evento/editar-evento.component'
 import { DetalleEventoComponent } from '../detalle-evento/detalle-evento.component';
 import { CrearEventoComponent } from '../crear-evento/crear-evento.component';
 import { AgregarInvitadosComponent } from '../agregar-invitados/agregar-invitados.component';
+import { MisEventosComponent } from '../mis-eventos/mis-eventos.component';
 
 
 @NgModule({
@@ -20,6 +21,6 @@ import { AgregarInvitadosComponent } from '../agregar-invitados/agregar-invitado
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage,LoginComponent,RegistroComponent,EditarEventoComponent,DetalleEventoComponent,CrearEventoComponent,AgregarInvitadosComponent]
+  declarations: [HomePage,LoginComponent,RegistroComponent,EditarEventoComponent,DetalleEventoComponent,CrearEventoComponent,AgregarInvitadosComponent,MisEventosComponent]
 })
 export class HomePageModule {}

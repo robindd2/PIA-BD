@@ -6,6 +6,7 @@ import { CrearEventoComponent } from './crear-evento/crear-evento.component';
 import { DetalleEventoComponent } from './detalle-evento/detalle-evento.component';
 import { EditarEventoComponent } from './editar-evento/editar-evento.component';
 import { AgregarInvitadosComponent } from './agregar-invitados/agregar-invitados.component';
+import { MisEventosComponent } from './mis-eventos/mis-eventos.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path: 'crear_evento',
     component: CrearEventoComponent
+  },
+  {
+    path: 'MIS-EVENTOS',
+    component: MisEventosComponent
   }
 ];
 
