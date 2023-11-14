@@ -30,9 +30,14 @@ export class MisEventosComponent  implements OnInit {
   tipoEvento: any=[];
   idTipoEvento: any=[];
 
-  idUsuario = this.usuario.idUsuario 
+  idUsuario = this.usuario.idUsuario
+  idEvento = this.usuario.idEvento
 
   dependencia: any;
+
+  actualizarVista(){
+    this.listarMisEventos(this.idUsuario)
+  }
 
   listarMisEventos(idUsuario : any){
     this.Http.get<any[]>(this.APIUrl+'listarMisEventos?idUsuario=' + idUsuario).subscribe(data=>{
@@ -48,6 +53,15 @@ export class MisEventosComponent  implements OnInit {
       if (data.length > 0) {
         evento.tipoEvento = data[0].tipoEvento;
       }
+    })
+  }
+
+  eliminarEvento(idEvento : any){
+    this.Http.get<any[]>(this.APIUrl+'eliminarEvento?idEvento='+ idEvento).subscribe(data=>{
+      console.log(this.misEventos)
+      this.misEventos.forEach((evento: any) => {
+        this.mostrarTipoEvento(evento);
+      });
     })
   }
 
