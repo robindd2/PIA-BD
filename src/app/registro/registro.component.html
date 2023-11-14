@@ -1,54 +1,63 @@
-<ion-card>
-
-  <ion-card-header>
-    <ion-card-title>REGISTRO</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-
-    <ion-item class="custom-input">
-      <ion-input  id="Nombre" required label="Nombre :" label-placement="floating" fill="outline" >  </ion-input>
-     </ion-item>
-     <br>
-
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>REGISTRO</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+  
       <ion-item class="custom-input">
-        <ion-input  id="PrimerApellido" required label="Primer Apellido :"  label-placement="floating" fill="outline" >  </ion-input>
+        <ion-input  id="nombre" required label="Nombre :" label-placement="floating" fill="outline" >  </ion-input>
        </ion-item>
        <br>
+  
+        <ion-item class="custom-input">
+          <ion-input  id="primerApellido" required label="Primer Apellido :"  label-placement="floating" fill="outline" >  </ion-input>
+         </ion-item>
+         <br>
+  
+         <ion-item class="custom-input">
+          <ion-input  id="segundoApellido" required label="Segundo Apellido :" label-placement="floating" fill="outline" >  </ion-input>
+         </ion-item>
+         <br>
 
-       <ion-item class="custom-input">
-        <ion-input  id="SegundoApellido" required label="Segundo Apellido :" label-placement="floating" fill="outline" >  </ion-input>
-       </ion-item>
-       <br>
-
-    <ion-item class="custom-input">
-      <ion-label>Dependencia</ion-label>
-        <ion-select  id="Dependencia" required label="Seleccionar" label-placement="floating" fill="outline" >
-        <ion-select-option *ngFor="let dependencia of dependencias" [value]="dependencia">{{ dependencia }}</ion-select-option>
-      </ion-select>
-    </ion-item>
-     <br>
-
+  
       <ion-item class="custom-input">
-        <ion-input  id="NombreUsuario" required label="Usuario: " label-placement="floating" fill="outline" ></ion-input>
-       </ion-item>
+        <ion-label>Dependencia</ion-label>
+          <ion-select  id="dependencia" required label="Seleccionar" label-placement="floating" fill="outline"  [(ngModel)]="dependenciaSeleccionada" (click)="seleccionarDependencia()">
+          <ion-select-option *ngFor="let dependencia of dependencias" [value]="dependencia">{{ dependencia }}</ion-select-option>
+        </ion-select>
+      </ion-item>
        <br>
+  
+        <ion-item class="custom-input">
+          <ion-input  id="nombreUsuario" required label="Usuario: " label-placement="floating" fill="outline" ></ion-input>
+         </ion-item>
+         <br>
+  
+         <ion-item class="custom-input">
+          <ion-input  id="pass" required label="Contraseña:" type="password" label-placement="floating" fill="outline" >  </ion-input>
+         </ion-item>
+        <br>
 
-       <ion-item class="custom-input">
-        <ion-input  id="password" required label="Contraseña:" type="password" label-placement="floating" fill="outline" >  </ion-input>
-       </ion-item>
-      <br>
+        <ion-item class="custom-input">
+          <ion-input  id="idRol" required label="idRol" label-placement="floating" fill="outline"></ion-input>
+         </ion-item>
+         <br>
 
-      <button [routerLink]="['/login']" class="registro" >Registrarse</button>
+  
+        <button (click)="registrarUsuario()" class="registro" >Registrarse</button>
+  
+        </ion-card-content>
+  </ion-card>
+  
+  <ion-footer >
+    <ion-toolbar>
+        <ion-buttons >
+            <ion-button [routerLink]="['/login']" > ¿Ya tienes una cuenta?</ion-button>
+            <ion-button [routerLink]="['/login']" class="registrate"> Inicia Sesion</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
 
-      </ion-card-content>
-</ion-card>
-
-<ion-footer >
-  <ion-toolbar>
-      <ion-buttons >
-          <ion-button [routerLink]="['/login']" > ¿Ya tienes una cuenta?</ion-button>
-          <ion-button [routerLink]="['/login']" class="registrate"> Inicia Sesion</ion-button>
-      </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
