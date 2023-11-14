@@ -1,3 +1,49 @@
-<p>
-  agregar-invitados works!
-</p>
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar> 
+      <ion-buttons slot="start">
+        <ion-back-button default-href="/MIS-EVENTOS">
+        </ion-back-button>
+      </ion-buttons>
+    <p>Agregar invitados</p>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card-content>
+    <ion-item class="custom-input">
+      <ion-input  id="nombre" required label="Nombre :" label-placement="floating" fill="outline" >  </ion-input>
+     </ion-item>
+     <br>
+
+      <ion-item class="custom-input">
+        <ion-input  id="primerApellido" required label="Primer Apellido :"  label-placement="floating" fill="outline" >  </ion-input>
+       </ion-item>
+       <br>
+
+       <ion-item class="custom-input">
+        <ion-input  id="segundoApellido" required label="Segundo Apellido :" label-placement="floating" fill="outline" >  </ion-input>
+       </ion-item>
+       <br>
+
+
+    <ion-item class="custom-input">
+      <ion-label>Dependencia</ion-label>
+        <ion-select  id="dependencia" required label="Dependencia :" label-placement="floating" fill="outline"  >
+        <ion-select-option *ngFor="let dependencia of dependencias" [value]="dependencia">{{ dependencia }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+     <br>
+
+     <ion-item class="custom-input">
+      <ion-label>Ocupacion</ion-label>
+        <ion-select  id="ocupacion" required label="Ocupacion :" label-placement="floating" fill="outline" >
+        <ion-select-option *ngFor="let ocupacion of ocupaciones" [value]="ocupacion">{{ ocupacion }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+     <br>
+  </ion-card-content>
+  <ion-button class="agregar">Agregar Invitado</ion-button>
+<br>
+</ion-content>
