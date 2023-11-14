@@ -1,3 +1,28 @@
-<p>
-  login works!
-</p>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>LOGIN</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+  
+      <ion-item class="custom-input">
+       <ion-input  id="NombreUsuario" required label="Usuario: " label-placement="floating" fill="outline" ></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="custom-input">
+       <ion-input  id="password" required label="Contraseña:" type="password" label-placement="floating" fill="outline" >  </ion-input>
+      </ion-item>
+      <br>
+      <button [routerLink]="['/home']" class="home" >Iniciar Sesion</button>
+   
+  </ion-card-content>
+</ion-card>
+
+<ion-footer >
+  <ion-toolbar>
+      <ion-buttons >
+          <ion-button [routerLink]="['/registro']" > ¿No tienes una cuenta?</ion-button>
+          <ion-button [routerLink]="['/registro']" class="registrate"> Registrate</ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+
+</ion-footer>

@@ -1,0 +1,41 @@
+
+ion-card {
+    background-color:rgb(50, 53, 219);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 145px;
+  }
+  
+  ion-card-content {
+    width: 100%; 
+  }
+
+.registro {
+  font-size: 17px;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgb(25, 28, 156);
+  transition: background-color 0.3s ease; 
+}
+
+.custom-input {
+  --background: rgb(115, 117, 247); 
+  --color:rgb(252, 252, 252);
+  }
+  
+  ion-button {
+    --background: #0e0d0d;
+    --color: rgb(243, 243, 243);
+  }
+
+  .registrate{
+    --color: rgb(9, 5, 253);
+
+  } 
+
+
+ 
+  
