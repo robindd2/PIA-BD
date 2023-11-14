@@ -23,13 +23,8 @@
 
     <ion-item class="custom-input">
       <ion-label>Dependencia</ion-label>
-      <ion-select id="Dependencia" required label="Seleccionar" label-placement="floating" fill="outline">
-        <ion-select-option value="opcion1">Facultad de Ciencias Biológicas</ion-select-option>
-        <ion-select-option value="opcion2">Facultad de Ciencias Fisicos Matematicas - "FCFM"</ion-select-option>
-        <ion-select-option value="opcion3">Facultad de Ciencias Químicas</ion-select-option>
-        <ion-select-option value="opcion1">Facultad de Ingeniería Civil</ion-select-option>
-        <ion-select-option value="opcion2">Facultad de Ingeniería Mecánica y Eléctrica</ion-select-option>
-        <ion-select-option value="opcion3">Facultad de Arquitectura</ion-select-option>
+        <ion-select  id="Dependencia" required label="Seleccionar" label-placement="floating" fill="outline" >
+        <ion-select-option *ngFor="let dependencia of dependencias" [value]="dependencia">{{ dependencia }}</ion-select-option>
       </ion-select>
     </ion-item>
      <br>
