@@ -5,3 +5,16 @@
     margin: auto;
     width: 80%;
 }
+
+.vip {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+  /* Estilo para el botón "Perfil" */
+  ion-button {
+    margin-right: 10px; /* Puedes ajustar el margen según tus preferencias */
+  }
