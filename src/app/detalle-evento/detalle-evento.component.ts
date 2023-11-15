@@ -16,6 +16,7 @@ export class DetalleEventoComponent  implements OnInit {
 
     this.detallesEvento(this.idEvento)
     this.mostrarInvitadosEspeciales()
+    this.mostrarInvitados(this.idEvento)
 
   }
 
@@ -28,7 +29,7 @@ export class DetalleEventoComponent  implements OnInit {
   idTipoEvento: any=[];
   idEvento = this.detalleEvento.idEvento
   invitadosEspeciales: any=[];
-
+  invitados: any=[];
 
   detallesEvento(idEvento : any){
     console.log(idEvento)
@@ -54,5 +55,11 @@ export class DetalleEventoComponent  implements OnInit {
       this.invitadosEspeciales=data;
     })
   }
+
+  mostrarInvitados(idEvento : any){
+    this.Http.get<any[]>(this.APIUrl+'mostrarInvitados?idEvento=' + idEvento).subscribe(data=>{
+      this.invitados=data;
+      console.log(this.invitados)
+    })}
 
 }
