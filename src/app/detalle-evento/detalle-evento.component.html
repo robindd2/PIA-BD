@@ -7,40 +7,35 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card>    
-    
+  <ion-card *ngFor="let miEvento of evento">
     <ion-card-header>
-      <ion-card-title>NOMBRE EVENTO:</ion-card-title>
+      <ion-card-title>NOMBRE EVENTO: {{miEvento.nombreEvento}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
 
       <ion-item>
-        <ion-label>TIPO:</ion-label>
+        <ion-label>TIPO: {{miEvento.tipoEvento}}</ion-label>
       </ion-item>
       
       <ion-item>
-        <ion-label>FECHA INICIO:</ion-label> 
+        <ion-label>FECHA INICIO: {{miEvento.fechaInicio}}</ion-label> 
       </ion-item>
 
       <ion-item>
-        <ion-label>FECHA FIN:</ion-label> 
+        <ion-label>FECHA FIN: {{miEvento.fechaFin}}</ion-label> 
       </ion-item>
 
       <ion-item>
-        <ion-label>LUGAR:</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>CUPO MAXIMO:</ion-label>
+        <ion-label>LUGAR: {{miEvento.lugar}}</ion-label>
       </ion-item>
         
       <ion-item>
-        <ion-label>CUPO ACTUAL:</ion-label>
+        <ion-label>CUPO: {{miEvento.cupo}}</ion-label>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">DESCRIPCION:</ion-label>
+        <ion-label position="stacked">DESCRIPCION: {{miEvento.descripcion}}</ion-label>
       </ion-item>
     <br>
 
@@ -49,7 +44,7 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Invitados Epeciales:</ion-card-title>
+      <ion-card-title>Invitados Epeciales: </ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
