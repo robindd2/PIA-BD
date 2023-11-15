@@ -28,7 +28,7 @@
     <p>Fecha de inicio: {{miEvento.fechaInicio}}</p>
     <p>Fecha de fin: {{miEvento.fechaFin}}</p>
   </ion-card-content>
-  <ion-button fill="clear" routerLink="/editar_evento"> Editar</ion-button>
+  <ion-button fill="clear" routerLink="/editar_evento" (click)="mandarIdEvento(miEvento.idEvento)"> Editar</ion-button>
   <ion-button fill="clear" (click)="eliminarEvento(miEvento.idEvento); actualizarVista()"> Eliminar</ion-button>
 </ion-card>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="ion-fab-fixed" >

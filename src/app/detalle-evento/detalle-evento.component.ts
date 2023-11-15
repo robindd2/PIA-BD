@@ -15,6 +15,7 @@ export class DetalleEventoComponent  implements OnInit {
   ngOnInit() {
 
     this.detallesEvento(this.idEvento)
+    this.mostrarInvitadosEspeciales()
 
   }
 
@@ -26,6 +27,7 @@ export class DetalleEventoComponent  implements OnInit {
   tipoEvento: any=[];
   idTipoEvento: any=[];
   idEvento = this.detalleEvento.idEvento
+  invitadosEspeciales: any=[];
 
 
   detallesEvento(idEvento : any){
@@ -38,11 +40,18 @@ export class DetalleEventoComponent  implements OnInit {
       });
     })
   }
+
   mostrarTipoEvento(evento: any){
     this.Http.get<any[]>(this.APIUrl+'mostrarTipoEvento?idTipoEvento=' + evento.idTipoEvento).subscribe(data=>{
       if (data.length > 0) {
         evento.tipoEvento = data[0].tipoEvento;
       }
+    })
+  }
+
+  mostrarInvitadosEspeciales(){
+    this.Http.get<any[]>(this.APIUrl+'mostrarInvitadosEspeciales').subscribe(data=>{
+      this.invitadosEspeciales=data;
     })
   }
 

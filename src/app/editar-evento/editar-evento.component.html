@@ -9,44 +9,39 @@
   <br>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Editar Evento</ion-card-title>
+      <ion-card-title>Editar evento</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content>
+    <ion-card-content *ngFor="let miEvento of evento">
       <ion-item>
-        <ion-input label="Nombre del Evento :" label-placement="floating" fill="outline" value="s" placeholder="Nombre del Evento"></ion-input>
-      </ion-item><br>
+        <ion-input  id="nombreEvento" required label="{{miEvento.nombreEvento}}" label-placement="floating" fill="outline"  placeholder=""></ion-input>
+      </ion-item><br> 
 
       <ion-item >
-          <ion-select  id="tipoEvento" required label="Seleccionar" label-placement="floating" fill="outline" >
+          <ion-select  id="tipoEvento" required label="Tipo" label-placement="floating" fill="outline" [(ngModel)]="tipoEventoSeleccionado">
           <ion-select-option  *ngFor="let tipoEvento of tipoEventos"[value]="tipoEvento">{{tipoEvento}}</ion-select-option>
         </ion-select>
-      </ion-item><br>
+      </ion-item><br> 
 
       <ion-item>
-        <ion-input label="FECHA INICIO :" value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline" ></ion-input>
-      </ion-item><br>
+        <ion-input id="fechaInicio" label="{{miEvento.fechaInicio}}"  placeholder="" label-placement="floating" fill="outline" > </ion-input>
+      </ion-item><br> 
 
       <ion-item>
-        <ion-input  label="FECHA FIN :" value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item><br>
+        <ion-input id="fechaFin"  label="{{miEvento.fechaFin}}"  placeholder="" label-placement="floating" fill="outline"></ion-input>
+      </ion-item><br> 
 
       <ion-item>
-        <ion-input label="LUGAR :"  value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item><br>
+        <ion-input id="lugar" label="{{miEvento.lugar}}"   placeholder="" label-placement="floating" fill="outline"> </ion-input>
+      </ion-item><br> 
 
       <ion-item>
-        <ion-input label="CUPO MAXIMO :" value="s" placeholder="Cupo Maximo" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item><br>
-        
-      <ion-item>
-        <ion-input label="CUPO ACTUAL :" value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item><br>
- 
+        <ion-input  id="cupo" label="{{miEvento.cupo}}"  placeholder="" label-placement="floating" fill="outline"  ></ion-input>
+      </ion-item><br> 
 
       <ion-item>
-        <ion-textarea  label="DESCRIPCION :" value="s" placeholder="Descripción del Evento" label-placement="floating" fill="outline" ></ion-textarea>
-      </ion-item><br>
+        <ion-textarea  id="descripcion" label="{{miEvento.descripcion}}"  placeholder="" label-placement="floating" fill="outline" ></ion-textarea>
+      </ion-item>
       <br>
 
     </ion-card-content>
@@ -54,14 +49,14 @@
   <br>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Invitados Epeciales:</ion-card-title>
+      <ion-card-title>Invitados Epeciales: </ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
       <ion-list>
 
-        <ion-item class="vip">
-          <ion-button fill="clear"> Perfil</ion-button> FERNANDO ALONSO MARTINEZ HERNANDEZ 
+        <ion-item *ngFor="let invitadoEspecial of invitadosEspeciales">
+            <ion-label><ion-button fill="clear" size="small"> Perfil</ion-button>{{invitadoEspecial.nombre}} {{invitadoEspecial.primerApellido}}</ion-label>
         </ion-item>
 
       </ion-list>
@@ -77,8 +72,8 @@
 
     <ion-card-content>
       <ion-list>
-        <ion-item>
-          Pokémon Yellow
+        <ion-item *ngFor="let invitado of invitados">
+          {{invitado.nombre}} {{invitado.primerApellido}}
           <ion-button slot="end" fill="clear" >Eliminar</ion-button>
         </ion-item>
 
@@ -88,6 +83,6 @@
     </ion-card-content>
   </ion-card>
   <br><br>
-  <ion-button [routerLink]="['/MIS-EVENTOS']" class="guardar">Guardar Cambios</ion-button>
+  <ion-button [routerLink]="['/MIS-EVENTOS']" class="guardar" (click)="editarEvento()">Guardar Cambios</ion-button>
 </ion-content>
 <br><br>

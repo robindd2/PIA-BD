@@ -49,8 +49,8 @@
 
     <ion-card-content>
       <ion-list>
-        <ion-item>
-          <ion-label>Pokémon Yellow</ion-label>
+        <ion-item *ngFor="let invitadoEspecial of invitadosEspeciales">
+          <ion-label><ion-button fill="clear" size="small"> Perfil</ion-button>{{invitadoEspecial.nombre}} {{invitadoEspecial.primerApellido}} </ion-label>
         </ion-item>
 
       </ion-list>
