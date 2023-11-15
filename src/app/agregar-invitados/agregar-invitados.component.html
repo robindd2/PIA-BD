@@ -9,9 +9,15 @@
     <p>Agregar invitados</p>
     </ion-toolbar>
   </ion-header>
-
-
+  <br>
+<ion-card>
+  <br>
   <ion-card-content>
+
+    <ion-card-header>
+      <ion-card-title>Agregar invitado</ion-card-title>
+    </ion-card-header>
+
     <ion-item class="custom-input">
       <ion-input  id="nombre" required label="Nombre :" label-placement="floating" fill="outline" >  </ion-input>
      </ion-item>
@@ -42,8 +48,11 @@
         <ion-select-option *ngFor="let ocupacion of ocupaciones" [value]="ocupacion">{{ ocupacion }}</ion-select-option>
       </ion-select>
     </ion-item>
-     <br>
+     <br>   <br>
   </ion-card-content>
+</ion-card>
+<br>
+<br>
   <ion-button class="agregar">Agregar Invitado</ion-button>
 <br>
 </ion-content>

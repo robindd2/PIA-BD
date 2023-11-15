@@ -8,7 +8,8 @@
     <p>Crear Evento</p>
     </ion-toolbar>
   </ion-header>
-
+  
+  <br> 
   <ion-card>
     <ion-card-header>
       <ion-card-title>Crear Evento</ion-card-title>
@@ -16,30 +17,30 @@
 
     <ion-card-content>
       <ion-item>
-        <ion-input  id="nombreEvento" label="Nombre del Evento :" label-placement="floating" fill="outline"  placeholder="Nombre del Evento"></ion-input>
-      </ion-item>
+        <ion-input  id="nombreEvento" required label="Nombre del Evento :" label-placement="floating" fill="outline"  placeholder=" Nombre del Evento"></ion-input>
+      </ion-item><br> 
 
       <ion-item >
-          <ion-select  id="tipoEvento" required label="Seleccionar" label-placement="floating" fill="outline" >
+          <ion-select  id="tipoEvento" required label="Tipo" label-placement="floating" fill="outline" >
           <ion-select-option  *ngFor="let tipoEvento of tipoEventos"[value]="tipoEvento">{{tipoEvento}}</ion-select-option>
         </ion-select>
-      </ion-item>
+      </ion-item><br> 
 
       <ion-item>
         <ion-input id="fechaInicio" label="FECHA INICIO :"  placeholder="Tipo de Evento" label-placement="floating" fill="outline" ></ion-input>
-      </ion-item>
+      </ion-item><br> 
 
       <ion-item>
         <ion-input id="fechaFin"  label="FECHA FIN :"  placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item>
+      </ion-item><br> 
 
       <ion-item>
         <ion-input id="lugar" label="LUGAR :"   placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item>
+      </ion-item><br> 
 
       <ion-item>
         <ion-input  id="cupo" label="CUPO MAXIMO :"  placeholder="Cupo Maximo" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item>
+      </ion-item><br> 
 
       <ion-item>
         <ion-textarea  id="descripcion" label="DESCRIPCION :"  placeholder="Descripción del Evento" label-placement="floating" fill="outline" ></ion-textarea>
@@ -48,7 +49,7 @@
 
     </ion-card-content>
   </ion-card>
-
+  <br> 
   <ion-card>
     <ion-card-header>
       <ion-card-title>Invitados Epeciales:</ion-card-title>
@@ -56,18 +57,20 @@
 
     <ion-card-content>
       <ion-list>
-        <ion-item>
-          Pokémon Yellow
-          <ion-button slot="end" fill="clear" >Eliminar</ion-button>
+
+        <ion-item class="vip">
+          <ion-button fill="clear"> Perfil</ion-button>
+          <ion-checkbox id="estado"> FERNANDO ALONSO MARTINEZ HERNANDEZ </ion-checkbox>
         </ion-item>
 
       </ion-list>
-      <br>
+      <br><br> 
       <ion-button expand="block">Agregar Invitados Especiales</ion-button>
     </ion-card-content>
   </ion-card>
 
- <br>
+ <br> <br> <br> 
   <ion-button [routerLink]="['/MIS-EVENTOS']" class="crear">Crear Evento</ion-button>
-<br>
+
+<br><br>
 </ion-content>
