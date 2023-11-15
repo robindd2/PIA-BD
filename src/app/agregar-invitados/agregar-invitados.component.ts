@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { detalleEvento } from '../services/detalleEvento.service';
 
 @Component({
   selector: 'app-agregar-invitados',
@@ -40,6 +41,11 @@ export class AgregarInvitadosComponent  implements OnInit {
   posicionOcupacion : any;
   ocupacionSeleccionada : any;
   posicionDependencia: any; 
+  evento: any=[];
+  tipoEvento: any=[];
+  idTipoEvento: any=[];
+  idEvento = this.detalleEvento.idEvento
+  invitadosEspeciales: any=[];
 
   seleccionarDependencia(){
     this.posicionDependencia = this.dependencias.indexOf(this.dependenciaSeleccionada) + 1;
@@ -51,19 +57,26 @@ export class AgregarInvitadosComponent  implements OnInit {
     console.log(this.posicionOcupacion);
   }
    
-  constructor(private Http:HttpClient, private router: Router) { }
+  constructor(private Http:HttpClient, private router: Router, private detalleEvento: detalleEvento) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.detallesEvento(this.idEvento)
+
+  }
 
   readonly APIUrl = "http://localhost:5293/api/PIABDD/"
  
 
-  agregarInvitados(){
+  agregarInvitados() {
     this.seleccionarDependencia()
     this.seleccionarOcupacion()
+    var idEvento = this.detalleEvento.idEvento
+    var numBoleto = '12'
     var nombre=((<HTMLInputElement>document.getElementById("nombre")).value);
     var primerApellido=((<HTMLInputElement>document.getElementById("primerApellido")).value);
     var segundoApellido=((<HTMLInputElement>document.getElementById("segundoApellido")).value);
+    var correo=((<HTMLInputElement>document.getElementById("correo")).value);
     var dependencia=this.posicionDependencia.toString();
     var ocupacion=this.posicionOcupacion.toString();
   
@@ -71,14 +84,26 @@ export class AgregarInvitadosComponent  implements OnInit {
     console.log(this.posicionOcupacion);
 
     var formData=new FormData();
+    formData.append("idEvento", idEvento);
     formData.append("nombre", nombre);
     formData.append("primerApellido", primerApellido);
     formData.append("segundoApellido", segundoApellido);
-    formData.append("idDependencia", dependencia);
+    formData.append("correo", correo);
     formData.append("idOcupacion", ocupacion);
+    formData.append("idDependencia", dependencia);
+    formData.append("numBoleto", numBoleto);
     this.Http.post(this.APIUrl+'agregarInvitados',formData).subscribe(data=>{})
   }
 
+  detallesEvento(idEvento : any){
+    console.log(idEvento)
+    this.Http.get<any[]>(this.APIUrl+'detalleEvento?idEvento=' + idEvento).subscribe(data=>{
+      this.evento=data;
+      console.log(this.evento)
+      this.evento.forEach((evento: any) => {
+      });
+    })
+  }
  
 
 }

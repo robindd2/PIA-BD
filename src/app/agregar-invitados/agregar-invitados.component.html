@@ -33,6 +33,11 @@
        </ion-item>
        <br>
 
+       <ion-item class="custom-input">
+        <ion-input  id="correo" required label="Correo: " label-placement="floating" fill="outline" >  </ion-input>
+       </ion-item>
+       <br>
+
 
     <ion-item class="custom-input">
       <ion-label>Dependencia</ion-label>
@@ -53,6 +58,6 @@
 </ion-card>
 <br>
 <br>
-  <ion-button class="agregar">Agregar Invitado</ion-button>
+  <ion-button class="agregar" (click)="agregarInvitados()" routerLink="/editar_evento">Agregar Invitado</ion-button>
 <br>
 </ion-content>
