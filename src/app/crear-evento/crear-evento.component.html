@@ -21,7 +21,7 @@
       </ion-item><br> 
 
       <ion-item >
-          <ion-select  id="tipoEvento" required label="Tipo" label-placement="floating" fill="outline" >
+          <ion-select  id="tipoEvento" required label="Tipo" label-placement="floating" fill="outline" [(ngModel)]="tipoEventoSeleccionado">
           <ion-select-option  *ngFor="let tipoEvento of tipoEventos"[value]="tipoEvento">{{tipoEvento}}</ion-select-option>
         </ion-select>
       </ion-item><br> 
@@ -70,7 +70,7 @@
   </ion-card>
 
  <br> <br> <br> 
-  <ion-button [routerLink]="['/MIS-EVENTOS']" class="crear">Crear Evento</ion-button>
+  <ion-button [routerLink]="['/MIS-EVENTOS']" class="crear" (click)="agregarEvento()">Crear Evento</ion-button>
 
 <br><br>
 </ion-content>
