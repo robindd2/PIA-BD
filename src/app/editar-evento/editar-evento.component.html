@@ -2,11 +2,11 @@
   <ion-header>
     <ion-toolbar> 
       <ion-buttons slot="start">
-        <ion-back-button default-href="/MIS-EVENTOS"></ion-back-button>
-      </ion-buttons>
+        <ion-back-button default-href="/MIS-EVENTOS"> </ion-back-button>
+      </ion-buttons>Editar Evento
     </ion-toolbar>
   </ion-header>
-
+  <br>
   <ion-card>
     <ion-card-header>
       <ion-card-title>Editar Evento</ion-card-title>
@@ -15,43 +15,43 @@
     <ion-card-content>
       <ion-item>
         <ion-input label="Nombre del Evento :" label-placement="floating" fill="outline" value="s" placeholder="Nombre del Evento"></ion-input>
-      </ion-item>
+      </ion-item><br>
 
       <ion-item >
           <ion-select  id="tipoEvento" required label="Seleccionar" label-placement="floating" fill="outline" >
           <ion-select-option  *ngFor="let tipoEvento of tipoEventos"[value]="tipoEvento">{{tipoEvento}}</ion-select-option>
         </ion-select>
-      </ion-item>
+      </ion-item><br>
 
       <ion-item>
         <ion-input label="FECHA INICIO :" value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline" ></ion-input>
-      </ion-item>
+      </ion-item><br>
 
       <ion-item>
         <ion-input  label="FECHA FIN :" value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item>
+      </ion-item><br>
 
       <ion-item>
         <ion-input label="LUGAR :"  value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item>
+      </ion-item><br>
 
       <ion-item>
         <ion-input label="CUPO MAXIMO :" value="s" placeholder="Cupo Maximo" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item>
+      </ion-item><br>
         
       <ion-item>
         <ion-input label="CUPO ACTUAL :" value="s" placeholder="Tipo de Evento" label-placement="floating" fill="outline"  ></ion-input>
-      </ion-item>
+      </ion-item><br>
  
 
       <ion-item>
         <ion-textarea  label="DESCRIPCION :" value="s" placeholder="Descripción del Evento" label-placement="floating" fill="outline" ></ion-textarea>
-      </ion-item>
+      </ion-item><br>
       <br>
 
     </ion-card-content>
   </ion-card>
-
+  <br>
   <ion-card>
     <ion-card-header>
       <ion-card-title>Invitados Epeciales:</ion-card-title>
@@ -59,17 +59,17 @@
 
     <ion-card-content>
       <ion-list>
-        <ion-item>
-          Pokémon Yellow
-          <ion-button slot="end" fill="clear" >Eliminar</ion-button>
+
+        <ion-item class="vip">
+          <ion-button fill="clear"> Perfil</ion-button> FERNANDO ALONSO MARTINEZ HERNANDEZ 
         </ion-item>
 
       </ion-list>
-      <br>
-      <ion-button expand="block">Agregar Invitados Especiales</ion-button>
+      <br><br> 
     </ion-card-content>
   </ion-card>
 
+  <br>
   <ion-card>
     <ion-card-header>
       <ion-card-title>Invitados :</ion-card-title>
@@ -83,9 +83,11 @@
         </ion-item>
 
       </ion-list>
-      <br>
+      <br><br>
       <ion-button expand="block" [routerLink]="['/agregar_invitados']">Agregar Invitados </ion-button>
     </ion-card-content>
   </ion-card>
+  <br><br>
   <ion-button [routerLink]="['/MIS-EVENTOS']" class="guardar">Guardar Cambios</ion-button>
 </ion-content>
+<br><br>
