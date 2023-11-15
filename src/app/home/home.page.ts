@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { detalleEvento } from '../services/detalleEvento.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class HomePage {
 
-  constructor(private navCtrl: NavController, private Http:HttpClient, private router: Router) { }
+  constructor(private navCtrl: NavController, private Http:HttpClient, private router: Router, private detalleEventoService: detalleEvento) { }
 
   readonly APIUrl =  "http://localhost:5293/api/PIABDD/"
 
@@ -37,6 +38,11 @@ export class HomePage {
         this.mostrarTipoEvento(evento);
       });
     })
+  }
+
+
+  mandarIdEvento(idEvento: any) {
+    this.detalleEventoService.guardarIdEvento(idEvento)
   }
 
   mostrarTipoEvento(evento: any){

@@ -29,6 +29,6 @@
   <p>Fecha de inicio: {{evento.fechaInicio}}</p>
   <p>Fecha de fin: {{evento.fechaFin}}</p>
 </ion-card-content>
-<ion-button fill="clear" routerLink="/detalle_evento"> Más informacion</ion-button>
+<ion-button fill="clear" routerLink="/detalle_evento" (click)="mandarIdEvento(evento.idEvento)"> Más informacion </ion-button>
 </ion-card>
 </ion-content>
