@@ -36,7 +36,7 @@
 
     <ion-item class="custom-input">
       <ion-label>Dependencia</ion-label>
-        <ion-select  id="dependencia" required label="Dependencia :" label-placement="floating" fill="outline"  >
+        <ion-select  id="dependencia" required label="Dependencia :" label-placement="floating" fill="outline" [(ngModel)]="dependenciaSeleccionada" (click)="seleccionarDependencia()" >
         <ion-select-option *ngFor="let dependencia of dependencias" [value]="dependencia">{{ dependencia }}</ion-select-option>
       </ion-select>
     </ion-item>
@@ -44,7 +44,7 @@
 
      <ion-item class="custom-input">
       <ion-label>Ocupacion</ion-label>
-        <ion-select  id="ocupacion" required label="Ocupacion :" label-placement="floating" fill="outline" >
+        <ion-select  id="ocupacion" required label="Ocupacion :" label-placement="floating" fill="outline" [(ngModel)]="ocupacionSeleccionada" (click)="seleccionarOcupacion()" >
         <ion-select-option *ngFor="let ocupacion of ocupaciones" [value]="ocupacion">{{ ocupacion }}</ion-select-option>
       </ion-select>
     </ion-item>

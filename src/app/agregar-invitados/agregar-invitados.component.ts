@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-invitados',
@@ -33,8 +35,50 @@ export class AgregarInvitadosComponent  implements OnInit {
   'Secretaria',
   'Jefes de Academia',
   'Administrativo'];
-  constructor() { }
+
+  dependenciaSeleccionada : any;
+  posicionOcupacion : any;
+  ocupacionSeleccionada : any;
+  posicionDependencia: any; 
+
+  seleccionarDependencia(){
+    this.posicionDependencia = this.dependencias.indexOf(this.dependenciaSeleccionada) + 1;
+    console.log(this.posicionDependencia);
+  }
+
+  seleccionarOcupacion(){
+    this.posicionOcupacion = this.ocupaciones.indexOf(this.ocupacionSeleccionada) + 1;
+    console.log(this.posicionOcupacion);
+  }
+   
+  constructor(private Http:HttpClient, private router: Router) { }
 
   ngOnInit() {}
+
+  readonly APIUrl = "http://localhost:5293/api/PIABDD/"
+ 
+
+  agregarInvitados(){
+    this.seleccionarDependencia()
+    this.seleccionarOcupacion()
+    var nombre=((<HTMLInputElement>document.getElementById("nombre")).value);
+    var primerApellido=((<HTMLInputElement>document.getElementById("primerApellido")).value);
+    var segundoApellido=((<HTMLInputElement>document.getElementById("segundoApellido")).value);
+    var dependencia=this.posicionDependencia.toString();
+    var ocupacion=this.posicionOcupacion.toString();
+  
+    console.log(this.posicionDependencia);
+    console.log(this.posicionOcupacion);
+
+    var formData=new FormData();
+    formData.append("nombre", nombre);
+    formData.append("primerApellido", primerApellido);
+    formData.append("segundoApellido", segundoApellido);
+    formData.append("idDependencia", dependencia);
+    formData.append("idOcupacion", ocupacion);
+    this.Http.post(this.APIUrl+'agregarInvitados',formData).subscribe(data=>{})
+  }
+
+ 
 
 }
